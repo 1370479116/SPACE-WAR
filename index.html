@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Space War - 太空飞机大战</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="title">Space War</div>
+      <div class="stats">
+        <div class="stat">得分 <span id="uiScore">0</span></div>
+        <div class="stat">生命 <span id="uiHp">100</span></div>
+        <div class="stat">子弹 <span id="uiBullets">1</span>/10</div>
+        <div class="stat">导弹 <span id="uiMissiles">0</span>/3</div>
+                </div>
+    </header>
+
+    <main class="stage">
+      <canvas id="game" width="900" height="600"></canvas>
+        
+      <div class="overlay" id="overlay">
+        <div class="panel">
+          <h1 id="ovTitle">Space War</h1>
+          <p id="ovText">点击开始后：\n- 左侧方向键移动（也支持键盘方向键）\n- 右侧“攻击”持续射击（也支持空格）\n- Boss 超过 1 分钟出现</p>
+          <div class="ovBtns">
+            <button id="btnStart">开始游戏</button>
+            <button id="btnRestart" class="ghost" style="display:none;">重新开始</button>
+            </div>
+        </div>
+      </div>
+    </main>
+        
+    <footer class="hud">
+      <section class="hudBox left">
+                <div class="dpad">
+          <button class="pad" data-key="ArrowUp">↑</button>
+          <div class="mid">
+            <button class="pad" data-key="ArrowLeft">←</button>
+            <button class="pad" data-key="ArrowDown">↓</button>
+            <button class="pad" data-key="ArrowRight">→</button>
+            </div>
+        </div>
+      </section>
+
+      <section class="hudBox center">
+        <div class="statusTitle">状态通知栏</div>
+        <div class="statusLine" id="statusLine">准备就绪</div>
+        <div class="statusSub" id="statusSub">等待开始…</div>
+      </section>
+
+      <section class="hudBox right">
+        <button id="btnAttack" class="action">攻击</button>
+        <button id="btnBomber" class="action alt" disabled>召唤轰炸机</button>
+      </section>
+    </footer>
+    </div>
+    
+  <script src="game.js" defer></script>
+</body>
+</html>
